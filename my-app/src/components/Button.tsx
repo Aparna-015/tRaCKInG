@@ -1,7 +1,11 @@
 type ButtonProps = {
-  text: string;
+ children: React.ReactNode;
 };
 
-export default function Button({ text }: ButtonProps) {
-  return <button className="bg-violet-500  text-white">{text}</button>;
+export  function Button({ children }: ButtonProps) {
+  return (
+    <button className="bg-violet-500 hover:bg-violet-600 text-white px-3 py-2 transition duration-300 ease-in-out">
+      {children}
+    </button>
+  );
 }
