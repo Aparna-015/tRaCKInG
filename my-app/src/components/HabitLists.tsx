@@ -11,10 +11,7 @@ const HabitLists = () => {
       {habits.map((items) => (
         
       
-          <h1 key={items.id} className="text-xl text-white font-bold">{items.name}</h1> 
-           
-        
-    
+          <HabitItem key={items.id} habit={habits} className="text-xl text-white font-bold"> </HabitItem> 
 
       ))}
     </div>
@@ -22,3 +19,13 @@ const HabitLists = () => {
 };
 
 export default HabitLists;
+
+type HabitItemProps = {
+  habits: {
+    id: number;
+    name: string;
+  };
+};
+function HabitItem({habit}: HabitItemProps) {
+  return (<div>{habit.name}</div>);
+}
